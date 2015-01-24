@@ -1,7 +1,66 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?wpvfhy');
+	src:url('fonts/icomoon.eot?#iefixwpvfhy') format('embedded-opentype'),
+		url('fonts/icomoon.woff?wpvfhy') format('woff'),
+		url('fonts/icomoon.ttf?wpvfhy') format('truetype'),
+		url('fonts/icomoon.svg?wpvfhy#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+	content: "\e600";
+	color: #FFBE2C;
+	margin-right: 0.2em;
+	position: relative;
+	top: 0.1em;
+}
+
+.icon-manoarriba:before {
+	content: "\e601";
+	margin-right: 0.1em;
+}
+
+.icon-manoabajo:before {
+	content: "\e602";
+	color: rgb(245, 137, 14);
+	margin-left: 0.1em;
+	position: relative;
+	top: 0.1em;
+}
+
+.icon-pencil:before {
+	content: "\e604";
+	margin-right: 0.5em;
+}
+
+a
+{
+	color: #228CE0;
+}
+aside
+{
+	display: none; /*Oculta el video*/
+}
 body 
 {
 	background: #EEEEEE; 
-	font-family: "Arial";
+	font-family: "Open Sans";
 	font-size: 16px;
 }
 
@@ -18,14 +77,17 @@ footer p:first-child
 {
 	margin-bottom: 0;
 }
+
 footer p:last-child
 {
 	margin-top: 0;
 }
+
 footer p:last-child:before
 {
 	content: "- ";
 }
+
 footer p:last-child:after
 {
 	content: " -";
@@ -44,13 +106,36 @@ header figure
 {
 	float:left;
 }
-header #logo img
+header #logo
+
 {
 	border-right: 1px solid white;
+
+}
+
+header #logo img
+
+{
+
 	margin-right: 0.5em;
 	padding-right: 0.5em;
 	width: 52px;
+	-webkit-transition:.5s; /*Tiempo en que ocurre la transicion*/
+	-moz-transition:.5s;
+
 }
+header #logo img:hover /*Hover: Evento que ejecuta una accion 
+						cuando el mouse se posiciona en la imagen*/
+
+{
+	/*Animacion del logo*/
+	/*webkit es el prefijo propietario de chrome*/
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(90deg); /*mozilla*/
+	-o-transform:rotate(90deg); /*opera*/
+	-ms-transform:rotate(90deg); /*IE*/
+}
+
 
 header h1
 {
@@ -74,15 +159,41 @@ header #Avatar img
 
 }
 
+/*Hacer rotar el avatar*/
+@-webkit-keyframes rotater {
+0% { -webkit-transform:rotate(0) scale(1) }
+50% { -webkit-transform:rotate(360deg) scale(2) }
+100% { -webkit-transform:rotate(720deg) scale(1) }
+}
 
+@-moz-keyframes rotater {
+0% { -moz-transform:rotate(0) scale(1) }
+50% { -moz-transform:rotate(360deg) scale(2) }
+100% { -moz-transform:rotate(720deg) scale(1) }
+}
+
+header #Avatar img:hover
+{
+
+	-webkit-animation-name:rotater;
+	-webkit-animation-duration:1s;
+	-webkit-animation-iteration-count:1;
+	-webkit-animation-timing-function: ease-out;
+	
+	-moz-animation-name:rotater;
+	-moz-animation-duration:1s;
+	-moz-animation-iteration-count:1;
+	-moz-animation-timing-function: ease-out;
+}
 
 nav
 {
-	background: #80BCA3;
-	display: block;
+	background: #AD80BC;
+	box-shadow: rgba(0,0,0,0.5) 0px 2px 10px;
 	margin: 0;
-	padding: 0 0.5em ;
+	padding: 0 5em ;
 	position: relative;
+	text-align: center;
 }
 
 nav ul
@@ -91,8 +202,6 @@ nav ul
 	margin: 0;
 	padding: 0;
 }
-
-
 
 nav ul #publicar_nav
 {
@@ -108,10 +217,27 @@ nav ul #publicar_nav a
 	border-radius: 5px;
 	box-shadow: rgba(0,0,0,0.5)5px 5px 20px; 
 	font-style: italic;
-	padding: 0.8em 0.5em;
+	padding: 0.8em 0.5em 0.8em 2em;
 	text-decoration: none;
 	text-shadow: rgba(0,0,0,0.5)2px 2px 5px; 
+	overflow: hidden;
 }
+nav ul #publicar_nav a:before
+{
+	position: absolute;
+	left: 0.2em;
+	top: 0.8em;
+	-webkit-transform:rotate(-15deg);
+	-moz-transform:rotate(-15deg);
+}
+nav ul #publicar_nav a:hover:before
+{
+	font-size: 20px;
+	-webkit-transform:rotate(-15deg);
+	-moz-transform:rotate(-15deg);
+	
+}
+
 
 nav ul li
 {
@@ -123,7 +249,14 @@ nav ul li a
 {
 	color: white;
 	display: block;
-	padding: 0.5em 0;
+	padding: 0.5em;
+	-webkit-transition:.3s;
+	-moz-transition:.3s;
+}
+
+nav ul li a:hover
+{
+	background: #343B54;
 }
 
 
@@ -198,16 +331,103 @@ nav ul li a
 {
 	background-color: white;
 	border-radius: 0 0 0.5em 0.5em;
-	left: 5%;
+	left: 2.5%;
 	margin-top: 3px;
 	padding: 0.2em 0.5em;
 	position: absolute;
 	top: 100%;
-	width: 90%;
+	width: 95%;
 } 
 
+#contenido .item .votacion a 
+{
+	text-decoration: none;
+}
+/*#contenido .item .votacion .down
+{
+	text-decoration: none;
+}
+
+#contenido .item .votacion .guardar_item
+{
+	text-decoration: none;
+}
+
+#contenido .item .votacion .up
+{
+	text-decoration: none;
+}
+*/
+#contenido .item .votacion .comentarios_item
+{
+	color: black;
+}
 #contenido .item .votacion .comentarios_item,
 #contenido .item .votacion .guardar_item
 {
 	float: right;
+}
+
+/*media Queries*/
+/*@media afecta la pantalla (screen) entre llaves lo que se 
+quiere cambiar, entre parentesis le estoy diciendo que afecte 
+pantallas desde minimo 800px, de 800 para abajo no hara nada,
+de 800 para arriba, cambiará el color de fondo a rojo
+@media screen and (min-width: 800px){
+	body {
+		background: red;
+	}
+
+}*/
+
+/*Cada vez que nosotros tomemos un documento de impresion,
+va a tomar estos estilos
+@media print{
+	body{
+		font-size: 50px;
+	}
+}*/
+
+/*Hacer que cuando la pantalla sea muy grande se coloque en
+2 columnas*/
+
+@media screen and (min-width: 800px){
+	body {
+		background: black;
+	}
+	#contenido
+	{
+		overflow: hidden;
+	}
+	#contenido .item
+	{
+		width: 49%; /*Ancho definido a un 50%*/
+		float: left;
+	}
+	#contenido .item:nth-child(odd) /*nth-child(odd) Toma a los elementos impares*/
+	{
+		margin-right: 2%;
+	}
+
+	/*#contenido .item:nth-child(even) 
+	{
+		background: red;
+	}
+	Testeando para elementos o pseudo clases estructurales pares*/
+	
+
+}
+
+/*Muestra el video solo en pantallas de al menos 1000px*/
+
+@media screen and (min-width: 1000px){
+	aside {
+		display: inline;
+		float: right;
+		margin:1em;
+		width:20%; /*Para variar la dimension del video*/
+	}
+	aside video{
+		width: 100%; /*Para variar la dimension del video*/
+	}
 }
