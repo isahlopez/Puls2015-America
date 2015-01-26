@@ -6,7 +6,6 @@
 	<meta name="viewport"content="width=device-width, minimum-scale=1, maximun-scale=1"/>
 
 	<title>Puls 2015: Comunidad de gente atractiva</title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="normalize.css"/>
 	<link rel="stylesheet" href="estilos.css"/>
 	<script type="text/javascript" src="prefix.js"></script>
@@ -30,9 +29,16 @@
 			<li><a href="#">JavaScript</a></li>
 			<li><a href="#">Css3</a></li>
 			<li><a href="#">Django</a></li>
-			<li id="publicar_nav" ><a href="#" class= "icon-pencil">Publicar</a></li>
+			<li id="publicar_nav" ><a href="#" class= "icon-pencil" id="mostrarForm">Publicar</a></li>
 		</ul>
 	</nav>
+	<form action="" id="formulario" class="formulario">
+		<label form="titulo">Título: </label>
+		<input type="text" id="titulo" placeholder="Introduzca el título" required/>
+		<label form="url">URL: </label>
+		<input type="url" id="url" placeholder="Introduzca el URL" required/>
+		<input type="submit" id="boton" value="Agregar"/>
+	</form>
 	<aside>
 		<video width="320" height="240" autoplay controls>
 	  		<source src="lecturas.mp4" type="video/mp4">
@@ -157,5 +163,8 @@
 			Mejorandola 2014
 		</p>
 	</footer>
+	<!--JQuery-->
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="formulario.js"></script>
 </body>
 </html>

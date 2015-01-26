@@ -23,6 +23,8 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+@import url ('http://fonts.googleapis.com/css?family=Open+Sans:400,800');
+
 .icon-star:before {
 	content: "\e600";
 	color: #FFBE2C;
@@ -91,6 +93,39 @@ footer p:last-child:before
 footer p:last-child:after
 {
 	content: " -";
+}
+
+form
+{
+	padding: 1em;
+	text-align: right;
+	display: none;/* Oculta el formulario para que por defecto no se vea*/
+}
+
+form input 
+{
+	border: 2px solid #AD80BC;
+	border-radius: 5px;
+	padding: 0.2em 0.6em;
+	
+}
+
+form input[type="submit"]
+{
+	background: #22BCE0;
+	border-radius: 5px;
+	box-shadow: rgba(0,0,0,0.5)5px 5px 20px; 
+	color: white;
+	font-style: italic;
+	padding: 0.2em 0.6em;
+	text-decoration: none;
+	text-shadow: rgba(0,0,0,0.5)2px 2px 5px; 
+	overflow: hidden;
+}
+
+form label
+{
+	color:black;
 }
 
 header
@@ -179,7 +214,7 @@ header #Avatar img:hover
 	-webkit-animation-duration:1s;
 	-webkit-animation-iteration-count:1;
 	-webkit-animation-timing-function: ease-out;
-	
+
 	-moz-animation-name:rotater;
 	-moz-animation-duration:1s;
 	-moz-animation-iteration-count:1;
@@ -252,11 +287,13 @@ nav ul li a
 	padding: 0.5em;
 	-webkit-transition:.3s;
 	-moz-transition:.3s;
+	text-decoration: none;
 }
 
 nav ul li a:hover
 {
 	background: #343B54;
+	text-decoration: underline;
 }
 
 
@@ -407,6 +444,11 @@ va a tomar estos estilos
 	#contenido .item:nth-child(odd) /*nth-child(odd) Toma a los elementos impares*/
 	{
 		margin-right: 2%;
+	}
+
+	form label
+	{
+		color:white;
 	}
 
 	/*#contenido .item:nth-child(even) 
